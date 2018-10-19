@@ -1,0 +1,289 @@
+$standardcolor: #0094d9;
+body {
+  font-family: 'Rokkitt', serif;
+}
+
+//registration
+
+.header {
+  width: 30%;
+  margin: 50px auto 0;
+  color: #fff;
+  background: #5F9EA0;
+  text-align: center;
+  border: 1px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+}
+
+.login-form, .content {
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.input-group {
+  margin: 10px 0 10px 0;
+}
+
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+
+.input-group input {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: #fff;
+  border-radius: 0;
+}
+
+.btn-login {
+  padding: 10px;
+  font-size: 15px;
+  color: #fff;
+  background: #5F9EA0;
+  border: none;
+  border-radius: 5px;
+}
+
+.error {
+  width: 92%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.success {
+  color: #3c763d;
+  background: #dff0d8;
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
+
+.form_error input {
+  border: 1px solid #D83D5A;
+}
+
+.index-body {
+  background-color: #000000;
+  height: 100vh;
+}
+
+.bg-grey {
+  background-color: #f8f9fa;
+  padding: 30px;
+}
+
+.bg-white {
+  padding: 30px;
+}
+
+.bg-earth {
+  background-image: url("../img/customLogo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 70vh;
+  margin-top: 65px;
+  h1 {
+    padding-top: 30px;
+    font-weight: bold;
+    text-shadow: -1px 0 #DAA520, 0 1px #DAA520, 1px 0 #DAA520, 0 -1px #DAA520;
+  }
+}
+
+.nav {
+  background-color: #000000;
+  position: relative;
+  z-index: 1;
+
+  .dropdown-toggle:after {
+    margin-top: 2px;
+  }
+}
+
+.text-front {
+  text-align: center;
+  font-size: 63px;
+  color: #fff;
+  margin-top: -115px;
+}
+
+.nav-website {
+  nav {
+    padding: 0;
+  }
+  ul {
+    margin: auto;
+    li {
+      margin: 20px;
+      a {
+        color: $standardcolor !important;
+      }
+    }
+  }
+  .btn-search {
+    color: $standardcolor;
+    background-color: transparent;
+    background-image: none;
+    border-color: $standardcolor;
+  }
+  .btn-search:hover {
+    color: #fff;
+    background-color: $standardcolor;
+    border-color: $standardcolor;
+  }
+  .no-pf {
+    margin-left: 40px;
+    height: 80px;
+    border-radius: 50%;
+  }
+}
+
+.worldcard {
+  margin-top: 110px;
+  background-image: url("../img/worldcard.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 468px;
+  width: 100%;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #343a40 !important;
+  min-width: 120px;
+  z-index: 1;
+
+  a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover {
+  .dropdown-content {
+    display: block;
+    transition: 0.5s;
+  }
+}
+
+// profile-page
+
+.profile-page {
+  margin-top: 126px;
+  .pf {
+    h1 {
+      padding-top: 50px;
+    }
+  }
+  .bg-melk {
+    background-image: url("../img/melk.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .bg-products {
+    background-image: url("../img/products.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 293px;
+    margin: 30px;
+  }
+  .list {
+    ul {
+      list-style: none;
+      li {
+        padding: 20px;
+        text-align: center;
+
+        p {
+          font-size: 30px;
+          font-weight: bold;
+        }
+
+        i {
+          font-size: 40px;
+        }
+        .fa-heart {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+.contacts {
+  p {
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  i {
+    font-size: 40px;
+  }
+}
+
+.register-form {
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  list-style: none;
+  li {
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+  .active {
+    background-color: $standardcolor;
+    color: #fff;
+  }
+  li:hover {
+    background-color: $standardcolor;
+    color: #fff;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.top-10 {
+  margin-top: 10px;
+}
+
+.answer {
+  input {
+    padding-left: 20px;
+    width: 80%;
+  }
+}
+
+.btn-comments {
+margin-bottom: 20px;
+}
