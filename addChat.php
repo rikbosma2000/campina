@@ -1,4 +1,13 @@
-<?php include('server.php'); ?>
+<?php
+
+require ('server.php');
+
+if (empty($_SESSION)) {
+    header('Location: /login.php');
+    return true;
+}
+
+?>
 
 
 <!DOCTYPE html>

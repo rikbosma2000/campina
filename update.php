@@ -1,17 +1,20 @@
-<?php include ('server.php'); ?>
-
 <?php
 
-$username = $_POST['username'];
-$id = $_SESSION['id'];
+require('server.php');
 
-$sql = "UPDATE users SET username='$username' WHERE id='$id'";
-$result= mysqli_query($db, $sql);
+if (isset($_POST['editProfile'])) {
+    $username = $_POST['username'];
+    $email = $_SESSION['email'];
 
-if ($db->query($sql) === TRUE) {
-    header('location: index.php');
-} else {
-    echo "Error updating record: " . $db->error;
+    $sql = "UPDATE users SET username='$username' WHERE email='$email'";
+    $result = mysqli_query($connection, $sql);
+
+    if ($result) {
+        $_SESSION['username'] = $username;
+        header('location: index.php');
+    } else {
+        echo "Error updating record: " . $connection->error;
+    }
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "campina");
+$connection = mysqli_connect("localhost", "root", "", "campina");
 
 if(mysqli_connect_errno()){
     echo "Failed to connect: " . mysqli_connect_error();
@@ -13,7 +13,7 @@ $output = '';
 if(isset($_GET['q']) && $_GET['q'] !== ' '){
     $searchq = $_GET['q'];
 
-    $q = mysqli_query($db, "SELECT * FROM search WHERE keywords LIKE '%$searchq%' OR title LIKE '%$searchq%'") or die(mysqli_error());
+    $q = mysqli_query($connection, "SELECT * FROM search WHERE keywords LIKE '%$searchq%' OR title LIKE '%$searchq%'") or die(mysqli_error());
     $c = mysqli_num_rows($q);
     if($c == 0){
         $output = 'No search results for <b>"' . $searchq . '"</b>';
@@ -33,6 +33,6 @@ if(isset($_GET['q']) && $_GET['q'] !== ' '){
     header("location: ./");
 }
 print("$output");
-mysqli_close($db);
+mysqli_close($connection);
 
 ?>

@@ -1,4 +1,13 @@
-<?php include ('server.php'); ?>
+<?php
+
+include ('server.php');
+
+if (!empty($_SESSION)) {
+    header('Location: /index.php');
+    return true;
+}
+
+?>
 
 <!DOCTYPE html>
 <html>

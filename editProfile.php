@@ -1,4 +1,19 @@
-<?php include('server.php'); ?>
+<?php
+
+include ('update.php');
+
+if (empty($_SESSION)) {
+    header('Location: /login.php');
+    return true;
+}
+
+$sql = "SELECT * FROM users";
+
+$result = mysqli_query($connection, "SELECT * FROM users");
+
+$row = mysqli_fetch_assoc($result);
+
+?>
 
 
 <!DOCTYPE html>
@@ -9,7 +24,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Campina</title>
-
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,43 +54,17 @@
     <h2>Change profile</h2>
 </div>
 
+<form method="post" action="update.php" class="login-form">
 
-<?php
-$sql = "SELECT * FROM users";
+    <div class='input-group'>
+        <input placeholder='Username' type='text' name='username' value='<?= $_SESSION['username'] ?>'>
+    </div>
 
-$result = mysqli_query($db, "SELECT * FROM users");
+    <div class=input-group>
+        <button type=submit name="editProfile" class='btn'>Save</button>
+    </div>
 
-$row = mysqli_fetch_assoc($result);
-
-
-echo "<form method=post action=update.php class=login-form>";
-//    <!--    display validation errors here-->
-
-echo "<div class='input-group'>
-        <input placeholder='username' type='text' name='username' value='" . $_SESSION['username'] . "'>
-    </div>";
-
-echo "<div class='input-group'>
-        <input placeholder='email' type='text' name='email' value='" . $_SESSION['email'] . "'>
-        </div>";
-
-
-echo "<div class=input-group>
-        <button type=submit class='btn'>Save</button>
-    </div>";
-
-echo "</form>";
-
-
-?>
-
-<?php
-if (isset($_SESSION['username']) && $_SESSION['username'] != "") {
-    //Task to do
-} else {
-    header('Location: login.php'); //redirect URL
-}
-?>
+</form>
 
 <!-- Bootstrap core JavaScript -->
 <script

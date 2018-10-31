@@ -1,4 +1,13 @@
-<?php include('server.php'); ?>
+<?php
+
+require ('server.php');
+
+if (empty($_SESSION)) {
+    header('Location: /login.php');
+    return true;
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -67,7 +76,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] != "") {
                 <form action="chat.php" method="get">
                     <?php
                     $sql = "SELECT title, description FROM search";
-                    $result = $db->query($sql);
+                    $result = $connection->query($sql);
 
                     if ($result->num_rows > 0) {
                         // output data of each row

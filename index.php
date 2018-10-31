@@ -1,4 +1,13 @@
-<?php include('server.php');?>
+<?php
+
+include ('server.php');
+
+if (!$_SESSION['logged_in']) {
+    header('location: login.php');
+    return;
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -42,14 +51,6 @@
                 </div>
             </div>
             <?php endif ?>
-
-            <?php
-            if($_SESSION['logged_in']){
-                //Task to do
-            } else {
-                header('Location: login.php'); //redirect URL
-            }
-            ?>
         </div>
     </nav>
     <div class="bg-earth">
