@@ -47,6 +47,7 @@ $row = mysqli_fetch_assoc($result);
 
 <body style="padding-top: 126px;">
 
+
 <?php include('nav.php') ?>
 <?php include('errors.php'); ?>
 
@@ -63,7 +64,13 @@ $row = mysqli_fetch_assoc($result);
     <div class=input-group>
         <button type=submit name="editProfile" class='btn'>Save</button>
     </div>
+</form>
 
+
+<form method="post" action="editProfile.php" name="delete">
+    <div class="input-group">
+        <button type="submit" name="delete" class="btn">Delete account</button>
+    </div>
 </form>
 
 <!-- Bootstrap core JavaScript -->

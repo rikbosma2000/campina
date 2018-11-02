@@ -8,13 +8,13 @@ $username = '';
 $email = '';
 $errors = [];
 
-//function test_input($data)
-//{
-//    $data = trim($data);
-//    $data = stripslashes($data);
-//    $data = htmlspecialchars($data);
-//    return $data;
-//}
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 /**
  * Register
@@ -115,7 +115,7 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $data['username'];
             $_SESSION['email'] = $data['email'];
 
-            header('location: index.php');
+//            header('location: /');
         } else {
             array_push($errors, "Wrong username/password combination");
         }
