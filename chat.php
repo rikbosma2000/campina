@@ -75,7 +75,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] != "") {
             <div class="col-md-8">
                 <form action="chat.php" method="get">
                     <?php
-                    $sql = "SELECT title, description FROM search";
+                    $sql = "SELECT title, description, id FROM search";
                     $result = $connection->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -84,7 +84,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] != "") {
                             echo "<div class='discussion-group' style='border: 1px solid #ddd; margin-bottom: 20px;'>
                                       <div class='row'>
                                         <div class='col-md-2'>
-
+                                            <h2>" . $row["id"] . "</h2>
                                         </div>
                                         <div class='col-md-10'>              
                                             <div class='row' style='padding: 20px;'>
@@ -93,7 +93,13 @@ if (isset($_SESSION['username']) && $_SESSION['username'] != "") {
                                             </div>
                                         </div>
                                     </div>
+                                    <form action='server.php' method='GET'>
+                                      <button id='" . $row["id"] . "' type='submit' name='delete' class='btn' value='" . $row["id"] . "'>Delete</button>
+</form>
                                </div>";
+
+
+
                         }
                     } else {
                         echo "0 results";

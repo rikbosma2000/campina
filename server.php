@@ -1,3 +1,5 @@
+
+
 <?php
 
 require_once 'bootstrap/bootstrap.php';
@@ -115,7 +117,7 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $data['username'];
             $_SESSION['email'] = $data['email'];
 
-//            header('location: /');
+            header('location: campina/index.php');
         } else {
             array_push($errors, "Wrong username/password combination");
         }
@@ -148,7 +150,21 @@ VALUES ('$title', '$description', '$keywords')";
     header("chat.php");
 }
 
+//delete
 
+if (isset($_GET['delete'])) {
+    $getId = $_GET['delete'];
+    $sql = "DELETE FROM search WHERE id=$getId";
+
+    if ($connection->query($sql) === TRUE) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . $connection->error;
+    }
+    header ('Location: chat.php');
+
+
+}
 
 
 
